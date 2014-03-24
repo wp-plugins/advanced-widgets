@@ -31,7 +31,7 @@
 			<td>
 				<p>
 					Send me the site url, the paypal donation id and your email to activate the plugin.<br/>
-					Nicolás Guglielmi <a href="mailto:nguglielmi@gmail.com">nguglielmi@gmail.com</a>
+					Nicolás Guglielmi <a href="mailto:nicolas.guglielmi@gmail.com">nicolas.guglielmi@gmail.com</a>
 				</p>
 			</td>
 		</tr>

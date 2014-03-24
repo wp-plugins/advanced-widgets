@@ -2,7 +2,7 @@
 /*
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
- Version:1.0.0
+ Version:1.0.1
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
