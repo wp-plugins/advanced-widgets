@@ -1,6 +1,6 @@
 === Advanced Widgets ===
 Contributors: Andrico
-Donate link: https://www.paypal.com/ar/cgi-bin/webscr?cmd=_flow&SESSION=mXaLDMHP9SOvBzzBfyM5lcRi6O6SkOCN0d_klWLYZg9N7JFCJrXcgIjO2ru&dispatch=5885d80a13c0db1f8e263663d3faee8d8cdcf517b037b45005cf5d4eda3b985b
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C6BWB77KBG664
 Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
 Requires at least: 3.8.1
 Tested up to: 3.8
