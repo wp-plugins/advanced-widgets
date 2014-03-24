@@ -7,9 +7,6 @@ Tested up to: 3.8
 Stable tag: 1.0.2
 License: -
 
-* Add widgets in sidebar and then assign it any where you are going to show! Never been easier to customize the widgets section!
-* Agrega widgets en cualquier sidebar y luego asignale donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
-
 == Description ==
 
 * Add widgets in sidebar and then assign it any where you are going to show! Never been easier to customize the widgets section!
