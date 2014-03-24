@@ -2,7 +2,7 @@
 /*
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
- Version:1.0.2
+ Version:1.0.3
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -38,7 +38,7 @@ class AdvancedWidgets{
 
 		add_action( 'wp_ajax_aw_save', array(&$this, 'aw_save') );
 		add_action( 'wp_ajax_aw_load', array(&$this, 'aw_load') );
-		//add_action( 'plugins_loaded', array(&$this, 'aw_text_domain'));
+		add_action( 'plugins_loaded', array(&$this, 'aw_load_textdomain'));
 		add_action( 'admin_menu' , array(&$this, 'aw_menu'));
 
 		add_filter( 'aw_filtros', array(&$this, "aw_filtros_simples"),10,2);
@@ -49,11 +49,8 @@ class AdvancedWidgets{
 		register_deactivation_hook(__FILE__, array(&$this,"aw_deactivate"));
 
 	}
-	function aw_text_domain(){
-		
-	}
 	function aw_menu(){
-		add_options_page(_('Advanced Widgets'), _('Advanced Widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
+		add_options_page(__('Advanced Widgets','advanced-widgets'), __('Advanced Widgets','advanced-widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
 	}
 	function aw_pagina_configuracion(){
 		if(isset($_POST['aw_action']) && $_POST['aw_action'] == "save"){
@@ -200,7 +197,7 @@ class AdvancedWidgets{
 		wp_enqueue_script("aw_script",AW_JS."/aw.js");
 		wp_localize_script('aw_script', 'aw_url', AW_URL);
 		wp_localize_script('aw_script', 'admin_url', get_bloginfo("url")."/wp-admin");
-		wp_localize_script('aw_script', 'label', array("configurar"=>_("Settings")));
+		wp_localize_script('aw_script', 'label', array("configurar"=>__("Settings",'advanced-widgets')));
 		if($this->numberDays <= 0 && $this->aw_dem){
 			wp_localize_script('aw_script', 'demora', (-$this->numberDays*1000));
 		}else{

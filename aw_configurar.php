@@ -3,25 +3,25 @@
 		<?php
 		if($numberDays > 0){
 			echo '<p>';
-				printf(_('After %d days expire plugin.'),$numberDays);
+				printf(__('After %d days, expire plugin.','advanced-widgets'),$numberDays);
 			echo '</p>';
 		}
 		?>
-		<p><?php printf(_('Have a delay of 1 second per day used. To remove the delay, press <a href="%s" target="_blank">here</a> and donate!'),admin_url()."/options-general.php?page=advanced-widgets"); ?></p>
+		<p><?php printf(__('Have a delay of 1 second per day used. To remove the delay, press <a href="%s" target="_blank">here</a> and donate!','advanced-widgets'),admin_url()."/options-general.php?page=advanced-widgets",'advanced-widgets'); ?></p>
 	</div>
 <?php }?>
-<h3><?php _e('Widget configuration');?></h3>
+<h3><?php _e('Widget configuration','advanced-widgets');?></h3>
 <h5><?php echo "Widget: ".$aw_widget_name;?></h5>
 <hr/>
 <form action="">
-	<h4><?php _e('Options');?></h4>
+	<h4><?php _e('Options','advanced-widgets');?></h4>
 	<p>
-		<label><input type="radio" <?php if($aw_opcion=="aw_todos_sin_seleccionados")echo 'checked="checked"';?> value="aw_todos_sin_seleccionados" name="aw_opcion"/><?php _e('Show widget on all pages except on the listed filters');?></label><br/>
-		<label><input type="radio" <?php if($aw_opcion=="aw_todos_seleccionados")echo 'checked="checked"';?> value="aw_todos_seleccionados" name="aw_opcion"/><?php _e('Show widget on listed filters');?></label>
+		<label><input type="radio" <?php if($aw_opcion=="aw_todos_sin_seleccionados")echo 'checked="checked"';?> value="aw_todos_sin_seleccionados" name="aw_opcion"/><?php _e('Show widget on all pages except on the listed filters','advanced-widgets');?></label><br/>
+		<label><input type="radio" <?php if($aw_opcion=="aw_todos_seleccionados")echo 'checked="checked"';?> value="aw_todos_seleccionados" name="aw_opcion"/><?php _e('Show widget on listed filters','advanced-widgets');?></label>
 	</p>
-	<h4><?php _e('Filters');?></h4>
+	<h4><?php _e('Filters','advanced-widgets');?></h4>
 	<p>
-		<?php _e('Enter one filter per line:');?> 
+		<?php _e('Enter one filter per line:','advanced-widgets');?> 
 		<code style="font-size:11px;">
 			<?php 
 			foreach($filtros as $filtro => $desc){
@@ -35,7 +35,7 @@
 	</p>
 	<hr/>
 	<p>
-		<button class="button-primary"><?php _e('Save');?></button>
-		<button class="button cerrar"><?php _e('Cancel');?></button>
+		<button class="button-primary"><?php _e('Save','advanced-widgets');?></button>
+		<button class="button cerrar"><?php _e('Cancel','advanced-widgets');?></button>
 	</p>
 </form>

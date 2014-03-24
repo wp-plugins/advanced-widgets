@@ -7,12 +7,12 @@
 }
 </style>
 <div class="wrap advanced-widgets">
-	<h2><?php _e("Hello!");?></h2>
+	<h2><?php _e("Hello!",'advanced-widgets');?></h2>
 	<?php
 	if($aw_salvado){
 		?>
 		<div id="message" class="updated">
-			<p><?php _e("Saved!");?></p>
+			<p><?php _e("Saved!",'advanced-widgets');?></p>
 		</div>
 		<?php
 	}
@@ -30,7 +30,7 @@
 			</td>
 			<td>
 				<p>
-					Send me the site url, the paypal donation id and your email to activate the plugin.<br/>
+					<?php _e('Send me the site url, the paypal donation id and your email to activate the plugin.','advanced-widgets');?><br/>
 					Nicolás Guglielmi <a href="mailto:nicolas.guglielmi@gmail.com">nicolas.guglielmi@gmail.com</a>
 				</p>
 			</td>
@@ -43,16 +43,16 @@
 		
 		<p>
 			<label>
-				<?php _e('Activation code');?><br/>
+				<?php _e('Activation code','advanced-widgets');?><br/>
 				<input size="50" class="<?php echo ($aw_check_code)?"ok":"error";?>" type="text" name="aw_code" value="<?php echo $aw_code;?>" />
 			</label>
 		</p>
 		<p>
-			<?php _e('Site url');?><br/>
+			<?php _e('Site url','advanced-widgets');?><br/>
 			<b><?php echo site_url();?></b>
 		</p>
 		<p>
-			<button class="button-primary"><?php _e("Save");?></button>
+			<button class="button-primary"><?php _e("Save",'advanced-widgets');?></button>
 		</p>
 	</form>
 
