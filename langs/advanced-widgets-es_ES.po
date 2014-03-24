@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Advanced Widgets\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-03-24 17:32-0300\n"
-"PO-Revision-Date: 2014-03-24 17:36-0300\n"
+"PO-Revision-Date: 2014-03-24 18:36-0300\n"
 "Last-Translator: Nicolás Guglielmi <nicolas.guglielmi@gmail.com>\n"
 "Language-Team: Andrico <nicolas.guglielmi@gmail.com>\n"
 "Language: \n"
@@ -41,7 +41,7 @@ msgstr "Url del sitio"
 #: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:55
 #: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:38
 msgid "Save"
-msgstr "Grabar"
+msgstr "Guardar"
 
 #: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:53
 msgid "Advanced Widgets"
