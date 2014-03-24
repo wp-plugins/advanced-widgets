@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Widgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-24 17:32-0300\n"
+"PO-Revision-Date: 2014-03-24 17:36-0300\n"
+"Last-Translator: Nicolás Guglielmi <nicolas.guglielmi@gmail.com>\n"
+"Language-Team: Andrico <nicolas.guglielmi@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;_x;__\n"
+"X-Poedit-Language: Español\n"
+"X-Poedit-Country: Argentina\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /opt/projects/plugin/advanced-widgets/trunk\n"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:10
+msgid "Hello!"
+msgstr "Hola!"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:15
+msgid "Saved!"
+msgstr "Salvado!"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:33
+msgid "Send me the site url, the paypal donation id and your email to activate the plugin."
+msgstr "Debes enviarme la url del sitio, el id de la donación y tú email para activar el plugin."
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:46
+msgid "Activation code"
+msgstr "Código de activación"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:51
+msgid "Site url"
+msgstr "Url del sitio"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:55
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:38
+msgid "Save"
+msgstr "Grabar"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:53
+msgid "Advanced Widgets"
+msgstr "Advanced Widgets"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:200
+msgid "Settings"
+msgstr "Opciones"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:6
+#, php-format
+msgid "After %d days, expire plugin."
+msgstr "Después de %d días, el plugin va a expirar."
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:10
+#, php-format
+msgid "Have a delay of 1 second per day used. To remove the delay, press <a href=\"%s\" target=\"_blank\">here</a> and donate!"
+msgstr "Tendrá 1 segundo de demora por día usado. Para remover la demora, apretá <a href=\"%s\" target=\"_blank\">aca</a> y doná!"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:13
+msgid "Widget configuration"
+msgstr "Configuración del Widget"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:17
+msgid "Options"
+msgstr "Opciones"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:19
+msgid "Show widget on all pages except on the listed filters"
+msgstr "Mostrar el widget en todas las páginas excepto en los filtros"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:20
+msgid "Show widget on listed filters"
+msgstr "Mostrar widget solo en el listado de filtros"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:22
+msgid "Filters"
+msgstr "Filtros"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:24
+msgid "Enter one filter per line:"
+msgstr "Ingresá un filtro por línea: "
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:39
+msgid "Cancel"
+msgstr "Cancelar"
+
