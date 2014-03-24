@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/ar/cgi-bin/webscr?cmd=_flow&SESSION=mXaLDMHP
 Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
 Requires at least: 3.8.1
 Tested up to: 3.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: -
 
 * Add widgets in sidebar and then assign it any where you are going to show! Never been easier to customize the widgets section!
@@ -30,6 +30,9 @@ License: -
 2. Options and filters of the widget
 
 == Changelog ==
+
+= 1.0.2 =
+* Corrección de error
 
 = 1.0.1 =
 * Email incorrecto para activar el plugin

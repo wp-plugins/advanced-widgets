@@ -2,7 +2,7 @@
 /*
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
- Version:1.0.1
+ Version:1.0.2
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -38,7 +38,7 @@ class AdvancedWidgets{
 
 		add_action( 'wp_ajax_aw_save', array(&$this, 'aw_save') );
 		add_action( 'wp_ajax_aw_load', array(&$this, 'aw_load') );
-		add_action( 'plugins_loaded', array(&$this, 'aw_text_domain'));
+		//add_action( 'plugins_loaded', array(&$this, 'aw_text_domain'));
 		add_action( 'admin_menu' , array(&$this, 'aw_menu'));
 
 		add_filter( 'aw_filtros', array(&$this, "aw_filtros_simples"),10,2);
@@ -48,6 +48,9 @@ class AdvancedWidgets{
 		register_activation_hook(__FILE__, array(&$this,"aw_activate"));
 		register_deactivation_hook(__FILE__, array(&$this,"aw_deactivate"));
 
+	}
+	function aw_text_domain(){
+		
 	}
 	function aw_menu(){
 		add_options_page(_('Advenced Widgets'), _('Advenced Widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
