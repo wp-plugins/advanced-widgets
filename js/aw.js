@@ -1,0 +1,56 @@
+jQuery(function(){
+	jQuery("body").append("<div id='aw_configurar' class='aw_configurar'><div class='aw_configurar_inner'></div></div>");
+	jQuery(".widget .widget-control-actions .alignleft").append(" | <a href='#' onclick='aw_configurar(jQuery(this));'>"+label.configurar+"</a>");
+})
+function aw_configurar_cerrar(){
+	jQuery(".aw_configurar").toggleClass("activo");
+	jQuery(".aw_configurar_inner").html("");
+}
+function add_filter(filtro){
+	jQuery(".aw_configurar_inner textarea").text(jQuery(".aw_configurar_inner textarea").text()+"\n"+filtro);
+}
+function aw_configurar(widget){
+	elemento = widget.parent().parent().parent();
+	widgetID = elemento.find(".widget-id").val();
+	baseID = elemento.find(".id_base").val();
+	jQuery(".aw_configurar").toggleClass("activo");
+	jQuery(".aw_configurar_inner").html("<div style='text-align:center;'><div id='time'></div><img src='"+admin_url+"/images/spinner.gif' /></div>");
+	jQuery.ajax({
+		url:ajaxurl,
+		type:"post",
+		data:{action:"aw_load",aw_widget_id:widgetID,aw_widget:baseID},
+		success:function(data){
+			if(demora != 0){
+				tiempo = demora/1000;
+				jQuery(".aw_configurar_inner #time").text(tiempo);
+				t = window.setInterval(function(){
+					tiempo -= 1;
+					jQuery(".aw_configurar_inner #time").text(tiempo);
+				},1000);
+			}
+			window.setTimeout(function(){
+				if(typeof t != "undefined")
+					clearInterval(t);
+				jQuery(".aw_configurar_inner").html("");
+				jQuery(".aw_configurar_inner").html(data);
+				jQuery(".aw_configurar_inner form").append("<input type='hidden' name='action' value='aw_save' /><input type='hidden' name='aw_widget' value='"+baseID+"'/><input type='hidden' name='aw_widget_id' value='"+widgetID+"'/>");
+				jQuery(".aw_configurar_inner button.cerrar").click(function(){
+					aw_configurar_cerrar();
+					return false;
+				})
+				jQuery(".aw_configurar_inner form").submit(function(){
+					jQuery.ajax({
+						url:ajaxurl,
+						type:"post",
+						data:jQuery(this).serialize(),
+						success:function(msj){
+							aw_configurar_cerrar();
+						}
+					})
+					return false;
+				})
+			},demora);
+		}
+	})
+	return false;
+}
