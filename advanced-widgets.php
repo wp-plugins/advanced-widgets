@@ -53,7 +53,7 @@ class AdvancedWidgets{
 		
 	}
 	function aw_menu(){
-		add_options_page(_('Advenced Widgets'), _('Advenced Widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
+		add_options_page(_('Advanced Widgets'), _('Advanced Widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
 	}
 	function aw_pagina_configuracion(){
 		if(isset($_POST['aw_action']) && $_POST['aw_action'] == "save"){
