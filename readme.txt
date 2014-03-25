@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widget, drupal, blocks drupal, widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
 Requires at least: 3.8.1
 Tested up to: 3.8
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: -
 
 == Description ==
@@ -27,6 +27,9 @@ License: -
 2. Options and filters of the widget
 
 == Changelog ==
+
+= 1.0.4 =
+* Corrección de error al cambiar a un tema sin sidebars
 
 = 1.0.3 =
 * Agregado idioma español

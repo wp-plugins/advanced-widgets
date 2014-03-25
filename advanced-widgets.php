@@ -2,7 +2,8 @@
 /*
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
- Version:1.0.3
+ Author URI: http://wordpress.org/plugins/advanced-widgets/
+ Version:1.0.4
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -90,38 +91,41 @@ class AdvancedWidgets{
 	function aw_aplicar_filtros($sidebars){
 		if(is_admin())
 			return $sidebars;
-		foreach($sidebars as $sidebar => $aw_widgets){
-			if($sidebar == "wp_inactive_widgets") continue;
-			foreach($aw_widgets as $key => $aw_widget){
-				$aw_opcion = get_option("aw_opcion_".$aw_widget);
-				if($aw_opcion == "aw_todos_sin_seleccionados"){
-					$aw_opcion = true;
-				}else if($aw_opcion == "aw_todos_seleccionados"){
-					$aw_opcion = false;
-				}else{
-					$aw_opcion = null;
-				}
-				$aw_filtros = get_option("aw_filtros_".$aw_widget);
-				if($aw_filtros && !empty($aw_filtros)){
-					$aw_filtros = trim($aw_filtros);
-					$aw_filtros = str_replace("\r\n","\n",$aw_filtros);
-					$aw_filtros = explode("\n",$aw_filtros);
-					$aw_filtros = array_filter($aw_filtros, 'trim');
-				}else{
-					$aw_filtros = array("[none]");
-				}
-
-				$exist = isset($sidebars[$sidebar][$key]);
-				if($exist && $aw_opcion !== null){
-					if($aw_filtros[0] == "[none]" && !$aw_opcion){
-						unset($sidebars[$sidebar][$key]);
+		if(isset($sidebars) && is_array($sidebars) && !empty($sidebars)){
+			foreach($sidebars as $sidebar => $aw_widgets){
+				if($sidebar == "wp_inactive_widgets") continue;
+				if(!isset($aw_widgets) || !is_array($aw_widgets) || empty($aw_widgets)) continue;
+				foreach($aw_widgets as $key => $aw_widget){
+					$aw_opcion = get_option("aw_opcion_".$aw_widget);
+					if($aw_opcion == "aw_todos_sin_seleccionados"){
+						$aw_opcion = true;
+					}else if($aw_opcion == "aw_todos_seleccionados"){
+						$aw_opcion = false;
 					}else{
-						if($this -> aw_analizar_widgets($aw_filtros)){
-							if($aw_opcion)
-								unset($sidebars[$sidebar][$key]);
+						$aw_opcion = null;
+					}
+					$aw_filtros = get_option("aw_filtros_".$aw_widget);
+					if($aw_filtros && !empty($aw_filtros)){
+						$aw_filtros = trim($aw_filtros);
+						$aw_filtros = str_replace("\r\n","\n",$aw_filtros);
+						$aw_filtros = explode("\n",$aw_filtros);
+						$aw_filtros = array_filter($aw_filtros, 'trim');
+					}else{
+						$aw_filtros = array("[none]");
+					}
+
+					$exist = isset($sidebars[$sidebar][$key]);
+					if($exist && $aw_opcion !== null){
+						if($aw_filtros[0] == "[none]" && !$aw_opcion){
+							unset($sidebars[$sidebar][$key]);
 						}else{
-							if(!$aw_opcion)
-								unset($sidebars[$sidebar][$key]);
+							if($this -> aw_analizar_widgets($aw_filtros)){
+								if($aw_opcion)
+									unset($sidebars[$sidebar][$key]);
+							}else{
+								if(!$aw_opcion)
+									unset($sidebars[$sidebar][$key]);
+							}
 						}
 					}
 				}
