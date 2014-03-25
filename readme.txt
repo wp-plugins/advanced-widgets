@@ -29,7 +29,7 @@ License: -
 == Changelog ==
 
 = 1.0.4 =
-* Corrección de error al cambiar a un tema sin sidebars
+* Corrección de error al cambiar a un tema sin ningún sidebars
 
 = 1.0.3 =
 * Agregado idioma español
