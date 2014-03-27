@@ -2,7 +2,8 @@
 /*
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
- Author URI: http://wordpress.org/plugins/advanced-widgets/
+ Plugin URI: http://wordpress.org/plugins/advanced-widgets/
+ Author URI: http://profiles.wordpress.org/andrico/
  Version:1.0.5
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
