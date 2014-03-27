@@ -19,7 +19,7 @@
 	?>
 	<h3>Advanced Widgets</h3>
 	<p><?php _e('Add widgets in your sidebars and then choose where they will be shown! It has never been so easy to personalize the widgets section!','advanced-widgets');?></p>
-	<h4><?php _e('How to use');?></h4>
+	<h4><?php _e('How to use','advanced-widgets');?></h4>
 	<ol>
 		<li><?php _e('Install the plugin','advanced-widgets');?></li>
 		<li><?php _e('Activate the plugin','advanced-widgets');?></li>
@@ -28,10 +28,10 @@
 		<li><?php _e('Configurate the options and add filters to show these widgets in a personalized way','advanced-widgets');?></li>
 	</ol>
 	
-	<h4><?php _e('Help!');?></h4>
+	<h4><?php _e('Help!','advanced-widgets');?></h4>
 	<p><?php _e('For any requirement, contact me to:','advanced-widgets');?> Nicolás Guglielmi <a href="mailto:nicolas.guglielmi@gmail.com">nicolas.guglielmi@gmail.com</a></p>
 	
-	<h4><?php _e('Activation');?></h4>
+	<h4><?php _e('Activation','advanced-widgets');?></h4>
 	<table>
 		<tr>
 			<td>
