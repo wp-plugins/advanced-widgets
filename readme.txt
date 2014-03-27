@@ -18,11 +18,11 @@ For any requirement, contact me to: nicolas.guglielmi@gmail.com
 
 == Installation ==
 
-1.Install the plugin
-1.Activate the plugin
-1.Add Widgets on the sidebars in the Appearance->widgets section
-1.Configurate the Widget by pressing on the bar of the title and then on the Configuration button
-1.Configurate the options and add filters to show these widgets in a personalized way
+1. Install the plugin
+1. Activate the plugin
+1. Add Widgets on the sidebars in the Appearance->widgets section
+1. Configurate the Widget by pressing on the bar of the title and then on the Configuration button
+1. Configurate the options and add filters to show these widgets in a personalized way
 
 == Frequently Asked Questions ==
 
