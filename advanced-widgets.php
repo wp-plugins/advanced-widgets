@@ -3,7 +3,7 @@
  Plugin name: Advanced Widgets
  Author: Andrico - Nicolás Guglielmi
  Author URI: http://wordpress.org/plugins/advanced-widgets/
- Version:1.0.4
+ Version:1.0.5
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -27,8 +27,8 @@ class AdvancedWidgets{
 		'[category]'=>'Only in category page' ,
 		'[archive]'=>'Only in archive page' ,
 		'[page-parent=ID]'=>'Only in the children pages' ,
-		'[post-name=NAME]'=>'Only in the page by NAME' ,
-		'[post-id=ID]'=>'Only in the page by ID' ,
+		'[post-name=SLUG]'=>'pages | posts | custom post by NAME. Ex. [post-name:hello-world]' ,
+		'[post-id=ID]'=>'pages | posts | custom post by ID' ,
 		'[taxonomy-id=ID]'=>'Only in the taxonomy by ID' ,
 		'[custom-post-type=SLUG]'=>'Only in custom post type by SLUG'
 	);

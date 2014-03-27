@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Widgets\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-24 17:32-0300\n"
-"PO-Revision-Date: 2014-03-24 18:36-0300\n"
+"POT-Creation-Date: 2014-03-27 14:28-0300\n"
+"PO-Revision-Date: 2014-03-27 14:34-0300\n"
 "Last-Translator: Nicolás Guglielmi <nicolas.guglielmi@gmail.com>\n"
 "Language-Team: Andrico <nicolas.guglielmi@gmail.com>\n"
 "Language: \n"
@@ -26,28 +26,68 @@ msgstr "Hola!"
 msgid "Saved!"
 msgstr "Salvado!"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:33
-msgid "Send me the site url, the paypal donation id and your email to activate the plugin."
-msgstr "Debes enviarme la url del sitio, el id de la donación y tú email para activar el plugin."
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:21
+msgid "Add widgets in your sidebars and then choose where they will be shown! It has never been so easy to personalize the widgets section!"
+msgstr "Agregá widgets en tus sidebars y luego elejí donde se van a mostrar! Nunca fue tan fácil personalizar la sección de widgets!"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:46
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:22
+msgid "How to use"
+msgstr "Como usarlo"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:24
+msgid "Install the plugin"
+msgstr "Instalar el plugin"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:25
+msgid "Activate the plugin"
+msgstr "Activar el plugin"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:26
+msgid "Add Widgets on the sidebars in the Appearance->widgets section"
+msgstr "Agregar widgets en la sección Apariencia->Widgets"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:27
+msgid "Configurate the Widget by pressing on the bar of the title and then on the Configuration button"
+msgstr "Configurar el widget apretando en la barra del título, luego en el boton de Configuración"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:28
+msgid "Configurate the options and add filters to show these widgets in a personalized way"
+msgstr "Configurar las opciones y agregar filtros para personalizar la muestra de los widgets"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:31
+msgid "Help!"
+msgstr "Ayuda!"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:32
+msgid "For any requirement, contact me to:"
+msgstr "Por cualquier consulta, contactarme a:"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:34
+msgid "Activation"
+msgstr "Activación"
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:47
+msgid "After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box"
+msgstr "Luego de 60 días, tendrás un delay de 1 segundo por día usado. Para remover esta demora, deberás enviarme tu email, el código de identificación de donación de paypal y la url del sitio que se encuentra debajo de esta sección."
+
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:60
 msgid "Activation code"
 msgstr "Código de activación"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:51
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:65
 msgid "Site url"
 msgstr "Url del sitio"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:55
+#: /opt/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:69
 #: /opt/projects/plugin/advanced-widgets/trunk/aw_configurar.php:38
 msgid "Save"
 msgstr "Guardar"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:53
+#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:54
 msgid "Advanced Widgets"
 msgstr "Advanced Widgets"
 
-#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:200
+#: /opt/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:204
 msgid "Settings"
 msgstr "Opciones"
 
@@ -89,3 +129,9 @@ msgstr "Ingresá un filtro por línea: "
 msgid "Cancel"
 msgstr "Cancelar"
 
+#~ msgid ""
+#~ "Send me the site url, the paypal donation id and your email to activate "
+#~ "the plugin."
+#~ msgstr ""
+#~ "Debes enviarme la url del sitio, el id de la donación y tú email para "
+#~ "activar el plugin."
