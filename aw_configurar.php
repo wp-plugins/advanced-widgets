@@ -25,7 +25,7 @@
 		<code style="font-size:11px;">
 			<?php 
 			foreach($filtros as $filtro => $desc){
-				echo '<a href="javascript:return false;" onclick="add_filter(\''.$filtro.'\');" title="'.$desc.'">'.$filtro.'</a> ';
+				echo '<a href="#" data-filter="'.$filtro.'" class="add_filter" title="'.$desc.'">'.$filtro.'</a> ';
 			}
 			?>
 		</code>

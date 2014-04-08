@@ -1,13 +1,20 @@
 jQuery(function(){
 	jQuery("body").append("<div id='aw_configurar' class='aw_configurar'><div class='aw_configurar_inner'></div></div>");
 	jQuery(".widget .widget-control-actions .alignleft").append(" | <a href='#' onclick='aw_configurar(jQuery(this));'>"+label.configurar+"</a>");
+	jQuery("body").on("click",".aw_configurar_inner .add_filter",function(e){
+		add_filter(jQuery(this).attr("data-filter"));
+		console.log(jQuery(this).attr("data-filter"));
+		e.preventDefault();
+		e.stopPropagation();
+	})
 })
 function aw_configurar_cerrar(){
 	jQuery(".aw_configurar").toggleClass("activo");
 	jQuery(".aw_configurar_inner").html("");
 }
 function add_filter(filtro){
-	jQuery(".aw_configurar_inner textarea").text(jQuery(".aw_configurar_inner textarea").text()+"\n"+filtro);
+	console.log(jQuery(".aw_configurar_inner textarea").val());
+	jQuery(".aw_configurar_inner textarea").val(jQuery(".aw_configurar_inner textarea").val()+"\n"+filtro);
 }
 function aw_configurar(widget){
 	elemento = widget.parent().parent().parent();

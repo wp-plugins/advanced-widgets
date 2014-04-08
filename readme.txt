@@ -1,11 +1,14 @@
 === Advanced Widgets ===
 Contributors: Andrico
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C6BWB77KBG664
-Tags: widget, drupal, blocks drupal, widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
+Tags: widget, drupal, blocks, blocks drupal, widgets, customize widgets, customize, advacned, multiple, many widgets, show widget, show widgets, hide widget, hide widgets, enable widget, disable widget, andrico, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
 Requires at least: 3.8.1
 Tested up to: 3.8
-Stable tag: 1.0.5
-License: -
+Stable tag: 1.0.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Add widgets in your sidebars and then choose where they will be shown! It has never been so easy to personalize the widgets section!
 
 == Description ==
 
@@ -15,6 +18,8 @@ License: -
 After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box: nicolas.guglielmi@gmail.com
 
 For any requirement, contact me to: nicolas.guglielmi@gmail.com
+
+También ver http://wordpress.org/plugins/multiple-sidebars/
 
 == Installation ==
 
@@ -30,12 +35,25 @@ After using it for 60 days, you will have a delay of a second per each day oy us
 
 For any requirement, contact me to: nicolas.guglielmi@gmail.com
 
+= Qué hace el plugin? =
+El plugin permite poder customizar la zona de sidebar, eligiendo donde va a mostrarse cada widget. En un solo sidebar se pueden agregar muchos widgets, y el plugin permite mostrar cada uno de ellos en diferentes páginas, sin tener que agregarlos muchas veces en muchos sidebars diferentes.
+
+= Cuales son las diferencias con los millones de plugins parecidos =
+Este plugin, a diferencia de otros, permite tener pocos sidebars (contenedores de widgets) y personalizar cada widget. Los otros plugin crean muchos sidebars y cada sidebar se muestra en una página por separado. Cada vez que se crea una página hay que acordarse de agregar de nuevo los widgets que necesitamos. Advanced Widgets, permite repetir ese widget con su configuración en muchas páginas, y sin mostrarlo en otras. Ej. Mostrar un widget sólo en una categoría, o sólo en un custom post type, o sólo en una página | entrada, o NO mostrar el widget en la home, pero si en todas las demás páginas.
+
+= Porqué tengo que donar? =
+No es obligación donar, es sólo una ayuda para continuar desarrollando plugins, y ayudando a la gente a solucionar problemas referidos a wordpress. Tu donación por más mínima que sea, me beneficia para poder seguir ayudando a la comunidad.
+Si no desea donar, sólo enviarme la url del sitio que se encuentra en los ajustes del plugin, y un correo electrónico para poder mandarte el código.
+
 == Screenshots ==
 
 1. Setting Widgets
 2. Options and filters of the widget
 
 == Changelog ==
+
+= 1.0.6 =
+* Corrección de errores
 
 = 1.0.5 =
 * Corrección traducción de idioma inglés.
