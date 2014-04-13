@@ -4,7 +4,7 @@
  Author: Andrico - Nicolás Guglielmi
  Plugin URI: http://wordpress.org/plugins/advanced-widgets/
  Author URI: http://profiles.wordpress.org/andrico/
- Version:1.1.0
+ Version:1.1.1
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -14,11 +14,8 @@ define(AW_URL,plugin_dir_url(__FILE__));
 define(AW_JS,AW_URL."/js");
 define(AW_IMG,AW_URL."/img");
 define(AW_CSS,AW_URL."/css");
-define(AW_DEM,60);
 
 class AdvancedWidgets{
-	private $numberDays = -30;
-	private $aw_dem = false;
 	private $filters = array(
 		'[front]'=>'Front page' ,
 		'[page]'=>'Only in pages' ,
@@ -55,39 +52,13 @@ class AdvancedWidgets{
 		add_options_page(__('Advanced Widgets','advanced-widgets'), __('Advanced Widgets','advanced-widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
 	}
 	function aw_pagina_configuracion(){
-		if(isset($_POST['aw_action']) && $_POST['aw_action'] == "save"){
-			update_option("_aw_code",($_POST['aw_code'])?$_POST['aw_code']:"");
-			$aw_salvado = true;
-		}
-		$aw_code = (get_option("_aw_code"))?get_option("_aw_code"):"AW-ACT-XXXXXX";
-		$this->aw_check_code();
-		$aw_check_code = !$this->aw_dem;
 		include("aw_ajustes.php");
 	}
 	function aw_activate(){
-		update_option('_aw_code',"AW-ACT-".sha1(md5(site_url())));
-		if(!get_option("_aw_fecha_activacion")){
-			add_option("_aw_fecha_activacion",date("Y/m/d"));
-			add_option("_aw_fecha_cad",strtotime("+".AW_DEM." days ".date("Y/m/d")));
-		}
+	}
+	function aw_deactivate(){
 	}
 	function aw_init(){
-		$this -> aw_check_code();
-		if($this->aw_dem){
-			$startTimeStamp = strtotime(date("Y/m/d"));
-			$endTimeStamp = get_option("_aw_fecha_cad");
-			$timeDiff = ($endTimeStamp - $startTimeStamp);
-			$this->numberDays = $timeDiff/86400;
-		}
-	}
-	function aw_check_code(){
-		$aw_cod = get_option("_aw_code");
-		if($aw_cod == "AW-ACT-".sha1(md5(site_url())))
-			$this->aw_dem = false;
-		else
-			$this->aw_dem = true;
-		
-		$this->aw_dem = false;
 	}
 	function aw_load_textdomain() {
 		load_plugin_textdomain( 'advanced-widgets', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' ); 
@@ -206,11 +177,6 @@ class AdvancedWidgets{
 		wp_localize_script('aw_script', 'aw_url', AW_URL);
 		wp_localize_script('aw_script', 'admin_url', get_bloginfo("url")."/wp-admin");
 		wp_localize_script('aw_script', 'label', array("configurar"=>__("Settings",'advanced-widgets')));
-		if($this->numberDays <= 0 && $this->aw_dem){
-			wp_localize_script('aw_script', 'demora', (-$this->numberDays*1000));
-		}else{
-			wp_localize_script('aw_script', 'demora', "0");
-		}
 
 		wp_enqueue_style("aw_style",AW_CSS."/aw.css");
 	}
@@ -241,18 +207,12 @@ class AdvancedWidgets{
 		$aw_opcion = get_option("aw_opcion_".$aw_widget_id);
 		$aw_filtros = get_option("aw_filtros_".$aw_widget_id);
 		$aw_widget_name = "";
-		$aw_donado = !$this->aw_dem;
 		$filtros = $this->filters;
-		$numberDays = $this->numberDays;
 
 		if ( isset($wp_registered_widgets[$aw_widget_id]['name']) )
 	    	$aw_widget_name = esc_html( $wp_registered_widgets[$aw_widget_id]['name'] );
 		require_once("aw_configurar.php");
 		die();
-	}
-	function aw_deactivate(){
-		// delete_option("_aw_fecha_activacion");
-		// delete_option("_aw_fecha_cad");
 	}
 	function aw_add_filter($name, $description, $function){
 		if(!array_key_exists($name,$this->filters)){

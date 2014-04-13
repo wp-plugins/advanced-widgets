@@ -1,15 +1,3 @@
-<?php if(!$aw_donado){?>
-	<div id="message" class="error">
-		<?php
-		if($numberDays > 0){
-			echo '<p>';
-				printf(__('After %d days, expire plugin.','advanced-widgets'),$numberDays);
-			echo '</p>';
-		}
-		?>
-		<p><?php printf(__('Have a delay of 1 second per day used. To remove the delay, press <a href="%s" target="_blank">here</a> and donate!','advanced-widgets'),admin_url()."/options-general.php?page=advanced-widgets",'advanced-widgets'); ?></p>
-	</div>
-<?php }?>
 <h3><?php _e('Widget configuration','advanced-widgets');?></h3>
 <h5><?php echo "Widget: ".$aw_widget_name;?></h5>
 <hr/>
