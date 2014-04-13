@@ -44,7 +44,7 @@
 			</td>
 			<td>
 				<p>
-					<?php _e('After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box','advanced-widgets');?><br/>
+					<!--<?php _e('After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box','advanced-widgets');?><br/>-->
 					Nicolás Guglielmi <a href="mailto:nicolas.guglielmi@gmail.com">nicolas.guglielmi@gmail.com</a>
 				</p>
 			</td>
