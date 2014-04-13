@@ -18,7 +18,7 @@ define(AW_DEM,60);
 
 class AdvancedWidgets{
 	private $numberDays = -30;
-	private $aw_dem = true;
+	private $aw_dem = false;
 	private $filters = array(
 		'[front]'=>'Front page' ,
 		'[page]'=>'Only in pages' ,
@@ -86,6 +86,8 @@ class AdvancedWidgets{
 			$this->aw_dem = false;
 		else
 			$this->aw_dem = true;
+		
+		$this->aw_dem = false;
 	}
 	function aw_load_textdomain() {
 		load_plugin_textdomain( 'advanced-widgets', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' ); 
