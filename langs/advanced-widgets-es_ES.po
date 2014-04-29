@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Widgets\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-29 14:57-0300\n"
-"PO-Revision-Date: 2014-04-29 14:58-0300\n"
+"POT-Creation-Date: 2014-04-29 16:09-0300\n"
+"PO-Revision-Date: 2014-04-29 16:09-0300\n"
 "Last-Translator: Nicolás Guglielmi <nicolas.guglielmi@gmail.com>\n"
 "Language-Team: Andrico <nicolas.guglielmi@gmail.com>\n"
 "Language: \n"
@@ -74,27 +74,23 @@ msgstr "El nomber del filtro"
 msgid "True or false"
 msgstr "Verdadero o falso"
 
-#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:61
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:64
 msgid "Help!"
 msgstr "Ayuda!"
 
-#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:62
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:65
 msgid "For any requirement, contact me to:"
 msgstr "Por cualquier consulta, contactarme a:"
 
-#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:64
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:67
 msgid "Donate"
 msgstr "Doná"
 
-#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:77
-msgid "After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box"
-msgstr "Luego de 60 días, tendrás un delay de 1 segundo por día usado. Para remover esta demora, deberás enviarme tu email, el código de identificación de donación de paypal y la url del sitio que se encuentra debajo de esta sección."
-
-#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:41
+#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:52
 msgid "Advanced Widgets"
 msgstr "Advanced Widgets"
 
-#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:109
+#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:180
 msgid "Settings"
 msgstr "Opciones"
 
@@ -129,6 +125,17 @@ msgstr "Guardar"
 #: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:27
 msgid "Cancel"
 msgstr "Cancelar"
+
+#~ msgid ""
+#~ "After using it for 60 days, you will have a delay of a second per each "
+#~ "day oy use. To avoid having this delay, you must send your e-mail, the "
+#~ "Paypal Id donation and the url of the site found below the following post "
+#~ "box"
+#~ msgstr ""
+#~ "Luego de 60 días, tendrás un delay de 1 segundo por día usado. Para "
+#~ "remover esta demora, deberás enviarme tu email, el código de "
+#~ "identificación de donación de paypal y la url del sitio que se encuentra "
+#~ "debajo de esta sección."
 
 #~ msgid "Saved!"
 #~ msgstr "Salvado!"

@@ -41,9 +41,12 @@
 	<code>
 	<pre>
 //Add new filter
-aw_add_filter('[post-name=SLUG]','Show only in the post by SLUG','function_to_call');<br/>
+add_action("aw_init","register_my_filter");
+function register_my_filter(){
+	aw_add_filter('[post-name=SLUG]','Show only in the post by SLUG','function_my_filter');
+}
 //Function to call the new filter
-function function_to_call($r,$filter){
+function function_my_filter($r,$filter){
 	global $post;
 	
 	//Get the filter value if necessary. (In the "[category]" example this is not necessary)
@@ -74,7 +77,6 @@ function function_to_call($r,$filter){
 			</td>
 			<td>
 				<p>
-					<!--<?php _e('After using it for 60 days, you will have a delay of a second per each day oy use. To avoid having this delay, you must send your e-mail, the Paypal Id donation and the url of the site found below the following post box','advanced-widgets');?><br/>-->
 					Nicolás Guglielmi <a href="mailto:nicolas.guglielmi@gmail.com">nicolas.guglielmi@gmail.com</a>
 				</p>
 			</td>
