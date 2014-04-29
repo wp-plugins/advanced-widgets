@@ -16,8 +16,22 @@ define(AW_IMG,AW_URL."/img");
 define(AW_CSS,AW_URL."/css");
 
 class AdvancedWidgets{
-	private $filters = array();
+	private $filters = array(
+		'[front]'=>'Front page' ,
+		'[page]'=>'Only in pages' ,
+		'[single]'=>'Only in posts' ,
+		'[search]'=>'Only in search page' ,
+		'[taxonomy]'=>'Only in taxonomy page' ,
+		'[category]'=>'Only in category page' ,
+		'[archive]'=>'Only in archive page' ,
+		'[page-parent=ID]'=>'Only in the children pages' ,
+		'[post-name=SLUG]'=>'pages | posts | custom post by NAME. Ex. [post-name:hello-world]' ,
+		'[post-id=ID]'=>'pages | posts | custom post by ID' ,
+		'[taxonomy-id=ID]'=>'Only in the taxonomy by ID' ,
+		'[custom-post-type=SLUG]'=>'Only in custom post type by SLUG'
+	);
 	function AdvancedWidgets(){
+
 		add_action("init",array(&$this,"aw_init"));
 		add_action('admin_enqueue_scripts', array(&$this,'aw_add_js'));
 
@@ -26,22 +40,26 @@ class AdvancedWidgets{
 		add_action( 'plugins_loaded', array(&$this, 'aw_load_textdomain'));
 		add_action( 'admin_menu' , array(&$this, 'aw_menu'));
 
+		add_filter( 'aw_filtros', array(&$this, "aw_filtros_simples"),10,2);
+		add_filter( 'aw_filtros', array(&$this, "aw_filtros_complejos"),11,2);
+
 		add_filter("sidebars_widgets",array(&$this,"aw_aplicar_filtros"),10,3);
 		register_activation_hook(__FILE__, array(&$this,"aw_activate"));
 		register_deactivation_hook(__FILE__, array(&$this,"aw_deactivate"));
 
-	}
-	function aw_activate(){
-	}
-	function aw_deactivate(){
-	}
-	function aw_init(){
 	}
 	function aw_menu(){
 		add_options_page(__('Advanced Widgets','advanced-widgets'), __('Advanced Widgets','advanced-widgets'), 'manage_options', 'advanced-widgets', array(&$this, "aw_pagina_configuracion"));
 	}
 	function aw_pagina_configuracion(){
 		include("aw_ajustes.php");
+	}
+	function aw_activate(){
+	}
+	function aw_deactivate(){
+	}
+	function aw_init(){
+		do_action("aw_init");
 	}
 	function aw_load_textdomain() {
 		load_plugin_textdomain( 'advanced-widgets', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' ); 
@@ -96,6 +114,59 @@ class AdvancedWidgets{
 		foreach($aw_filtros as $aw_filtro){
 			if($aw_filtro=="" || empty($aw_filtro))continue;
 			$ret = apply_filters("aw_filtros",$ret,$aw_filtro);
+		}
+		return $ret;
+	}
+	function aw_filtros_simples($ret, $aw_filtro){
+		global $post;
+		switch(true){
+			case $aw_filtro == "[front]":
+				$ret = $ret || is_front_page() || is_home()?true:false;
+				break;
+			case $aw_filtro == "[archive]":
+				$ret = $ret || is_archive()?true:false;
+				break;
+			case $aw_filtro == "[taxonomy]":
+				$ret = $ret || is_taxonomy()?true:false;
+				break;
+			case $aw_filtro == "[category]":
+				$ret = $ret || is_category()?true:false;
+				break;
+			case $aw_filtro == "[post]":
+				$ret = $ret || is_single()?true:false;
+				break;
+			case $aw_filtro == "[page]":
+				$ret = $ret || is_page()?true:false;
+				break;
+			case $aw_filtro == "[search]":
+				$ret = $ret || is_search()?true:false;
+				break;
+		}
+		return $ret;
+	}
+	function aw_filtros_complejos($ret, $aw_filtro){
+		global $post;
+		switch(true){
+			case preg_match("#\[custom-post-type=(.*)\]#",$aw_filtro):
+				$type_post = preg_replace("#\[custom-post-type=(.*)\]#","$1",$aw_filtro);
+				if($type_post == get_post_type(get_the_ID()))
+					$ret = $ret || true;
+				break;
+			case preg_match("#\[post-id=(.*)\]#",$aw_filtro):
+				$post_id = preg_replace("#\[post-id=(.*)\]#","$1",$aw_filtro);
+				if($post_id == $post->ID && !is_front_page() && !is_home() && (is_single() || is_page()))
+					$ret = $ret || true;
+				break;
+			case preg_match("#\[post-name=(.*)\]#",$aw_filtro):
+				$post_slug = preg_replace("#\[post-name=(.*)\]#","$1",$aw_filtro);
+				if($post_slug == $post->post_name && !is_front_page() && !is_home() && (is_single() || is_page()))
+					$ret = $ret || true;
+				break;
+			case preg_match("#\[page-parent=(.*)\]#",$aw_filtro):
+				$post_id = preg_replace("#\[page-parent=(.*)\]#","$1",$aw_filtro);
+				if($post->post_parent == $post_id)
+					$ret = $ret || true;
+				break;
 		}
 		return $ret;
 	}
@@ -158,92 +229,5 @@ function aw_add_filter($name,$description,$function){
 	if(function_exists($function)){
 		$AW->aw_add_filter($name,$description,$function);
 	}
-}
-
-//Add simple Filters
-$filters_simples = array(
-	'[front]'=>'Front page' ,
-	'[page]'=>'Only in pages' ,
-	'[single]'=>'Only in posts' ,
-	'[search]'=>'Only in search page' ,
-	'[taxonomy]'=>'Only in taxonomy page' ,
-	'[category]'=>'Only in category page' ,
-	'[archive]'=>'Only in archive page' ,
-);
-foreach($filters_simples as $name => $description){
-	aw_add_filter($name,$description,"aw_filtros_simples");
-}
-function aw_filtros_simples($ret, $aw_filtro){
-	global $post;
-	switch(true){
-		case $aw_filtro == "[front]":
-			$ret = $ret || is_front_page() || is_home()?true:false;
-			break;
-		case $aw_filtro == "[archive]":
-			$ret = $ret || is_archive()?true:false;
-			break;
-		case $aw_filtro == "[taxonomy]":
-			$ret = $ret || is_taxonomy()?true:false;
-			break;
-		case $aw_filtro == "[category]":
-			$ret = $ret || is_category()?true:false;
-			break;
-		case $aw_filtro == "[post]":
-			$ret = $ret || is_single()?true:false;
-			break;
-		case $aw_filtro == "[page]":
-			$ret = $ret || is_page()?true:false;
-			break;
-		case $aw_filtro == "[search]":
-			$ret = $ret || is_search()?true:false;
-			break;
-	}
-	return $ret;
-}
-
-//Add custom Filters
-$filters = array(
-	'[page-parent=ID]'=>'Only in the children pages' ,
-	'[post-name=SLUG]'=>'pages | posts | custom post by NAME. Ex. [post-name:hello-world]' ,
-	'[post-id=ID]'=>'pages | posts | custom post by ID' ,
-	'[taxonomy-id=ID]'=>'Only in the taxonomy by ID' ,
-	'[category-id=ID]'=>'Only in the category by ID' ,
-	'[custom-post-type=SLUG]'=>'Only in custom post type by SLUG'
-);
-foreach($filters as $name => $description){
-	aw_add_filter($name,$description,"aw_filtros_complejos");
-}
-function aw_filtros_complejos($ret, $aw_filtro){
-	global $post;
-	switch(true){
-		case preg_match("#\[custom-post-type=(.*)\]#",$aw_filtro):
-			$type_post = preg_replace("#\[custom-post-type=(.*)\]#","$1",$aw_filtro);
-			if($type_post == get_post_type(get_the_ID()))
-				$ret = $ret || true;
-			break;
-		case preg_match("#\[post-id=(.*)\]#",$aw_filtro):
-			$post_id = preg_replace("#\[post-id=(.*)\]#","$1",$aw_filtro);
-			if($post_id == $post->ID && !is_front_page() && !is_home() && (is_single() || is_page()))
-				$ret = $ret || true;
-			break;
-		case preg_match("#\[post-name=(.*)\]#",$aw_filtro):
-			$post_slug = preg_replace("#\[post-name=(.*)\]#","$1",$aw_filtro);
-			if($post_slug == $post->post_name && !is_front_page() && !is_home() && (is_single() || is_page()))
-				$ret = $ret || true;
-			break;
-		case preg_match("#\[page-parent=(.*)\]#",$aw_filtro):
-			$post_id = preg_replace("#\[page-parent=(.*)\]#","$1",$aw_filtro);
-			if($post->post_parent == $post_id)
-				$ret = $ret || true;
-			break;
-		case preg_match("#\[category-id=(.*)\]#",$aw_filtro):
-            $category_id = preg_replace("#\[category-id=(.*)\]#","$1",$aw_filtro);
-            $category = get_category( get_query_var( 'cat' ) );
-            $cat_id = $category->cat_ID;
-            if($category_id == $cat_id)
-                $ret = $ret || true;
-            break;
-	}
-	return $ret;
 }
 ?>

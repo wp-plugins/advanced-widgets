@@ -44,7 +44,9 @@ Este plugin, a diferencia de otros, permite tener pocos sidebars (contenedores d
 == Changelog ==
 
 = 1.1.2 =
-* Add function to add new filters. Settings -> Advanced Widgets -> Add new filters
+* Nueva función para poder agregar filtros personalizados. Ayuda en: Settings -> Advanced Widgets -> Add new filters
+* Corrección de errores
+* Corrección de Traducción
 
 = 1.1.1 =
 * Free Plugin.
