@@ -4,7 +4,7 @@
  Author: Andrico - Nicolás Guglielmi
  Plugin URI: http://wordpress.org/plugins/advanced-widgets/
  Author URI: http://profiles.wordpress.org/andrico/
- Version:1.1.2
+ Version:1.2
  Description: Agrega widgets en tus sidebars y luego elije donde se van a mostrar! Nunca fue más fácil personalizar la sección de widgets!
  Tags: Widgets, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
  */
@@ -28,7 +28,8 @@ class AdvancedWidgets{
 		'[post-name=SLUG]'=>'pages | posts | custom post by NAME. Ex. [post-name:hello-world]' ,
 		'[post-id=ID]'=>'pages | posts | custom post by ID' ,
 		'[taxonomy-id=ID]'=>'Only in the taxonomy by ID' ,
-		'[custom-post-type=SLUG]'=>'Only in custom post type by SLUG'
+		'[custom-post-type=SLUG]'=>'Only in custom post type by SLUG',
+		'[path=the/url]'=>'Show only if the url contains the filter text. You can put "url/*" for all subpages'
 	);
 	function AdvancedWidgets(){
 
@@ -113,7 +114,7 @@ class AdvancedWidgets{
 		$ret = false;
 		foreach($aw_filtros as $aw_filtro){
 			if($aw_filtro=="" || empty($aw_filtro))continue;
-			$ret = apply_filters("aw_filtros",$ret,$aw_filtro);
+			$ret = $ret || apply_filters("aw_filtros",$ret,$aw_filtro);
 		}
 		return $ret;
 	}
@@ -165,6 +166,12 @@ class AdvancedWidgets{
 			case preg_match("#\[page-parent=(.*)\]#",$aw_filtro):
 				$post_id = preg_replace("#\[page-parent=(.*)\]#","$1",$aw_filtro);
 				if($post->post_parent == $post_id)
+					$ret = $ret || true;
+				break;
+			case (!(strpos($aw_filtro,"[path") === false)):
+				$path = preg_replace("#^\[path=(.*?)\]$#","$1",$aw_filtro);
+				$path = preg_replace("#/\*#", "(.*)", $path);
+				if( preg_match("#^/?".$path."/?$#","$_SERVER[REQUEST_URI]") )
 					$ret = $ret || true;
 				break;
 		}

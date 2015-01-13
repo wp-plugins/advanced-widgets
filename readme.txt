@@ -3,8 +3,8 @@ Contributors: Andrico
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C6BWB77KBG664
 Tags: widget, drupal, blocks, blocks drupal, widgets, customize widgets, customize, advacned, multiple, many widgets, show widget, show widgets, hide widget, hide widgets, enable widget, disable widget, andrico, custom widgets, custom sidebars, multiple sidebars, advanced widgets, select widgets, configure widgets
 Requires at least: 3.8.1
-Tested up to: 3.9
-Stable tag: 1.1.2
+Tested up to: 4.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,10 @@ Este plugin, a diferencia de otros, permite tener pocos sidebars (contenedores d
 2. Options and filters of the widget
 
 == Changelog ==
+
+= 1.2 =
+* Bugs
+* Nuevo Filtro PATH
 
 = 1.1.2 =
 * Nueva función para poder agregar filtros personalizados. Ayuda en: Settings -> Advanced Widgets -> Add new filters
