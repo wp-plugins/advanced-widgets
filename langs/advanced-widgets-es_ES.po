@@ -1,0 +1,170 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Widgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-04-29 16:09-0300\n"
+"PO-Revision-Date: 2014-04-29 16:09-0300\n"
+"Last-Translator: Nicolás Guglielmi <nicolas.guglielmi@gmail.com>\n"
+"Language-Team: Andrico <nicolas.guglielmi@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;_x;__\n"
+"X-Poedit-Language: Español\n"
+"X-Poedit-Country: Argentina\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: /www/projects/plugin/advanced-widgets/trunk\n"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:10
+msgid "Hello!"
+msgstr "Hola!"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:12
+msgid "Add widgets in your sidebars and then choose where they will be shown! It has never been so easy to personalize the widgets section!"
+msgstr "Agregá widgets en tus sidebars y luego elejí donde se van a mostrar! Nunca fue tan fácil personalizar la sección de widgets!"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:14
+msgid "How to use"
+msgstr "Como usarlo"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:16
+msgid "Install the plugin"
+msgstr "Instalar el plugin"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:17
+msgid "Add Widgets on the sidebars in the Appearance->widgets section"
+msgstr "Agregar widgets en la sección Apariencia->Widgets"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:18
+msgid "Configurate the Widget by pressing on the bar of the title and then on the Configuration button"
+msgstr "Configurar el widget apretando en la barra del título, luego en el boton de Configuración"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:19
+msgid "Configurate the options and add filters to show these widgets in a personalized way"
+msgstr "Configurar las opciones y agregar filtros para personalizar la muestra de los widgets"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:22
+msgid "Add new filters"
+msgstr "Agregar nuevos filtros"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:26
+msgid "filter name. Ex: [category]"
+msgstr "nombre del filtro. Ej: [category]"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:27
+msgid "Short description"
+msgstr "Breve descripción"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:28
+msgid "Function to call"
+msgstr "Función a llamar"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:31
+msgid "return of the function"
+msgstr "retorno de la función"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:32
+msgid "The filter name"
+msgstr "El nomber del filtro"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:33
+msgid "True or false"
+msgstr "Verdadero o falso"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:64
+msgid "Help!"
+msgstr "Ayuda!"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:65
+msgid "For any requirement, contact me to:"
+msgstr "Por cualquier consulta, contactarme a:"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_ajustes.php:67
+msgid "Donate"
+msgstr "Doná"
+
+#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:52
+msgid "Advanced Widgets"
+msgstr "Advanced Widgets"
+
+#: /www/projects/plugin/advanced-widgets/trunk/advanced-widgets.php:180
+msgid "Settings"
+msgstr "Opciones"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:1
+msgid "Widget configuration"
+msgstr "Configuración del Widget"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:5
+msgid "Options"
+msgstr "Opciones"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:7
+msgid "Show widget on all pages except on the listed filters"
+msgstr "Mostrar el widget en todas las páginas excepto en los filtros"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:8
+msgid "Show widget on listed filters"
+msgstr "Mostrar widget solo en el listado de filtros"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:10
+msgid "Filters"
+msgstr "Filtros"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:12
+msgid "Enter one filter per line:"
+msgstr "Ingresá un filtro por línea: "
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:26
+msgid "Save"
+msgstr "Guardar"
+
+#: /www/projects/plugin/advanced-widgets/trunk/aw_configurar.php:27
+msgid "Cancel"
+msgstr "Cancelar"
+
+#~ msgid ""
+#~ "After using it for 60 days, you will have a delay of a second per each "
+#~ "day oy use. To avoid having this delay, you must send your e-mail, the "
+#~ "Paypal Id donation and the url of the site found below the following post "
+#~ "box"
+#~ msgstr ""
+#~ "Luego de 60 días, tendrás un delay de 1 segundo por día usado. Para "
+#~ "remover esta demora, deberás enviarme tu email, el código de "
+#~ "identificación de donación de paypal y la url del sitio que se encuentra "
+#~ "debajo de esta sección."
+
+#~ msgid "Saved!"
+#~ msgstr "Salvado!"
+
+#~ msgid "Activate the plugin"
+#~ msgstr "Activar el plugin"
+
+#~ msgid "Activation"
+#~ msgstr "Activación"
+
+#~ msgid "Activation code"
+#~ msgstr "Código de activación"
+
+#~ msgid "Site url"
+#~ msgstr "Url del sitio"
+
+#~ msgid "After %d days, expire plugin."
+#~ msgstr "Después de %d días, el plugin va a expirar."
+
+#~ msgid ""
+#~ "Have a delay of 1 second per day used. To remove the delay, press <a href="
+#~ "\"%s\" target=\"_blank\">here</a> and donate!"
+#~ msgstr ""
+#~ "Tendrá 1 segundo de demora por día usado. Para remover la demora, apretá "
+#~ "<a href=\"%s\" target=\"_blank\">aca</a> y doná!"
+
+#~ msgid ""
+#~ "Send me the site url, the paypal donation id and your email to activate "
+#~ "the plugin."
+#~ msgstr ""
+#~ "Debes enviarme la url del sitio, el id de la donación y tú email para "
+#~ "activar el plugin."
